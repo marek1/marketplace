@@ -1,32 +1,102 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Produkte</router-link> |
+      <router-link to="/shops">Läden</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  a, .clickable {
+    cursor: pointer;
+  }
+  
+  #nav {
+    padding: 30px;
+  }
+  
+  #nav a {
+    font-weight: bold;
+    color: #b3bbc3;
+  }
+  
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+  .small-logo{
+    max-width: 100px;
+  }
+  .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    max-width: 1080px;
+  }
+  
+  .masonry {
+    margin:30px auto;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    column-count: 1;
+    column-gap: 0;
+  }
 
-#nav {
-  padding: 30px;
-}
+  .no-csscolumns .masonry {
+    max-width:500px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .brick {
+    background:white;
+    padding:1em;
+    margin:0 1em 2em 1em;
+    border:1px solid #ccc;
+    border-bottom-width:3px;
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    max-width: 300px;
+  }
+  
+  .brick img {
+    max-width: 100%;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @media screen and (min-width:650px) {
+    .masonry {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+
+  @media screen and (min-width:960px) {
+    .masonry {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+    }
+  }
+
+  @media screen and (min-width:1200px) {
+    .masonry {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 4;
+      max-width:1460px;
+    }
+  }
+
 </style>
