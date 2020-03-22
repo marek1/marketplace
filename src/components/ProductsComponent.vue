@@ -4,7 +4,14 @@
       <div>
         {{item.name}}
       </div>
-      <img v-bind:src="item.image">
+      <div>
+        <img v-bind:src="item.image">
+      </div>
+      <div id="tags">
+        <div class="badge" v-for="badge in item.tags" v-bind:key="badge">
+          {{badge}}
+        </div>
+      </div>
       <div v-if="!isProductFull(item) && checkIfProductExists(item.name).length > 0">
         <div>erhältlich bei</div>
         <div v-for="shop in checkIfProductExists(item.name)" v-bind:key="shop.name">
@@ -49,6 +56,5 @@
 </script>
 
 <style scoped>
-
 
 </style>

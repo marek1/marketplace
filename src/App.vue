@@ -1,7 +1,12 @@
 <template>
   <div id="app">
+    <div id="top-bar">
+      &checkmark; Nachhaltig konsumieren
+      &checkmark; Geschäfte in deiner Nähe unterstützen
+    </div>
     <div id="nav">
-      <router-link to="/">Produkte</router-link> |
+      <router-link to="/">Produkte</router-link>
+      |
       <router-link to="/shops">Läden</router-link>
     </div>
     <router-view/>
@@ -16,25 +21,36 @@
     text-align: center;
     color: #2c3e50;
   }
+  
   a, .clickable {
     cursor: pointer;
   }
   
+  #top-bar {
+    background-color: #42b983;
+    color: white;
+    opacity: 0.75;
+  }
+  
   #nav {
     padding: 30px;
+    font-size: 150%;
   }
   
   #nav a {
     font-weight: bold;
     color: #b3bbc3;
+    text-decoration: underline;
   }
   
   #nav a.router-link-exact-active {
     color: #42b983;
   }
-  .small-logo{
+  
+  .small-logo {
     max-width: 100px;
   }
+  
   .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -44,7 +60,7 @@
   }
   
   .masonry {
-    margin:30px auto;
+    margin: 30px auto;
     -webkit-column-count: 1;
     -webkit-column-gap: 0;
     -moz-column-count: 1;
@@ -52,17 +68,17 @@
     column-count: 1;
     column-gap: 0;
   }
-
+  
   .no-csscolumns .masonry {
-    max-width:500px;
+    max-width: 500px;
   }
-
+  
   .brick {
-    background:white;
-    padding:1em;
-    margin:0 1em 2em 1em;
-    border:1px solid #ccc;
-    border-bottom-width:3px;
+    background: white;
+    padding: 1em;
+    margin: 0 1em 2em 1em;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px;
     display: inline-block;
     -webkit-column-break-inside: avoid;
     -moz-column-break-inside: avoid;
@@ -73,30 +89,46 @@
   .brick img {
     max-width: 100%;
   }
-
-  @media screen and (min-width:650px) {
+  
+  @media screen and (min-width: 650px) {
     .masonry {
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2;
     }
   }
-
-  @media screen and (min-width:960px) {
+  
+  @media screen and (min-width: 960px) {
     .masonry {
       -webkit-column-count: 3;
       -moz-column-count: 3;
       column-count: 3;
     }
   }
-
-  @media screen and (min-width:1200px) {
+  
+  @media screen and (min-width: 1200px) {
     .masonry {
       -webkit-column-count: 4;
       -moz-column-count: 4;
       column-count: 4;
-      max-width:1460px;
+      max-width: 1460px;
     }
+  }
+  
+  .badge {
+    background-color: #b3bbc3;
+    color: white;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
 </style>

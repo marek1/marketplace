@@ -1,10 +1,12 @@
 import { Materials } from '@/enums/materials';
+import { Tags } from '@/enums/tags';
 
 export interface Product {
   name: string;
   image: string;
   url: string;
   material?: Materials;
+  tags?: Tags[];
 }
 
 interface Price {
