@@ -3,13 +3,14 @@ import { Tags } from '@/enums/tags';
 
 export interface Product {
   name: string;
+  description?: string;
   image: string;
   url: string;
   material?: Materials;
   tags?: Tags[];
 }
 
-interface Price {
+export interface Price {
   price: number;
   date: Date;
 }

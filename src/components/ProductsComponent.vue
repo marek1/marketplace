@@ -8,13 +8,19 @@
         <div>
           {{item.name}}
         </div>
+        <div id="tags">
+          <div class="badge green" v-for="badge in item.tags" v-bind:key="badge">
+            &checkmark; {{badge}}
+          </div>
+        </div>
         <div>
           <img v-bind:src="item.image">
         </div>
-        <div id="tags">
-          <div class="badge" v-for="badge in item.tags" v-bind:key="badge">
-            {{badge}}
-          </div>
+        <div>
+          {{item.description}}
+        </div>
+        <div>
+          Material: <div class="badge">{{item.material}}</div>
         </div>
         <div v-if="!isProductFull(item) && shopsFound(item.name).length > 0">
           <div>erhältlich bei</div>
@@ -24,7 +30,8 @@
           </div>
         </div>
         <div v-else>
-          nur <b>{{getLatestPrice(products, item.name)}} EUR</b>
+          <b>Letzter Preis: {{getLatestPrice(products, item.name)}} EUR</b>
+          <PastPricesComponent v-bind:item="item"></PastPricesComponent>
         </div>
       </div>
     </div>
@@ -35,8 +42,11 @@
   import { Component, Prop, Vue } from 'vue-property-decorator';
   import { Product, ProductFull, Shop } from '@/interfaces';
   import { Shops } from '@/data/shops';
+  import PastPricesComponent from '@/components/PastPricesComponent.vue';
 
-  @Component
+  @Component({
+      components: {PastPricesComponent}
+  })
   export default class ProductsComponent extends Vue {
     @Prop() products: Product|ProductFull[];
     
@@ -61,5 +71,10 @@
 </script>
 
 <style scoped>
-
+  #tags {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    text-align: left;
+  }
 </style>

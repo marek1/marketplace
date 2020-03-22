@@ -65,6 +65,14 @@ export const Shops: Shop[] = [
         inStock: 6,
         prices: [
           {
+            price: 38.99,
+            date: new Date('2020-01-01')
+          },
+          {
+            price: 39.99,
+            date: new Date('2020-02-01')
+          },
+          {
             price: 37.99,
             date: new Date('2020-03-01')
           }
@@ -75,8 +83,12 @@ export const Shops: Shop[] = [
         inStock: 1,
         prices: [
           {
-            price: 39.99,
+            price: 36.99,
             date: new Date('2019-01-01')
+          },
+          {
+            price: 39.99,
+            date: new Date('2019-03-01')
           }
         ],
         visits: [
@@ -92,6 +104,10 @@ export const Shops: Shop[] = [
         prices: [
           {
             price: 17.99,
+            date: new Date('2020-01-01')
+          },
+          {
+            price: 19.99,
             date: new Date('2020-03-01')
           }
         ],
@@ -112,6 +128,10 @@ export const Shops: Shop[] = [
         ...Products[8],
         inStock: 1,
         prices: [
+          {
+            price: 32.99,
+            date: new Date('2020-01-01')
+          },
           {
             price: 29.99,
             date: new Date('2020-03-01')
@@ -155,6 +175,10 @@ export const Shops: Shop[] = [
         inStock: 1,
         prices: [
           {
+            price: 27.99,
+            date: new Date('2020-01-01')
+          },
+          {
             price: 29.99,
             date: new Date('2020-03-01')
           }
@@ -186,6 +210,10 @@ export const Shops: Shop[] = [
         ...Products[6],
         inStock: 1,
         prices: [
+          {
+            price: 9.99,
+            date: new Date('2020-01-01')
+          },
           {
             price: 9.99,
             date: new Date('2020-03-01')
@@ -220,6 +248,10 @@ export const Shops: Shop[] = [
         prices: [
           {
             price: 19.99,
+            date: new Date('2019-01-01')
+          },
+          {
+            price: 19.99,
             date: new Date('2020-03-01')
           }
         ],
@@ -240,6 +272,10 @@ export const Shops: Shop[] = [
         ...Products[5],
         inStock: 1,
         prices: [
+          {
+            price: 11.99,
+            date: new Date('2019-01-01')
+          },
           {
             price: 9.99,
             date: new Date('2020-03-01')

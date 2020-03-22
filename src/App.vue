@@ -84,6 +84,7 @@
     -moz-column-break-inside: avoid;
     column-break-inside: avoid;
     max-width: 300px;
+    position: relative;
   }
   
   .brick img {
@@ -127,8 +128,10 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25rem;
-    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
+  .badge.green {
+    background-color: #42b983;
+    opacity: 0.5;
+  }
 </style>

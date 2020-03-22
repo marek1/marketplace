@@ -114,3 +114,7 @@ export const shopVisits: Visit[] = [
     date: new Date('2020-03-21')
   }
 ];
+
+export const productVisits: Visit[] = [
+  ...shopVisits
+];

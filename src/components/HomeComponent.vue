@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from 'vue-property-decorator';
+  import { Component, Vue } from 'vue-property-decorator';
   import ProductsComponent from '@/components/ProductsComponent.vue';
   import { Products } from '@/data/products';
   @Component({
