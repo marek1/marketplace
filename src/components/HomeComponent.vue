@@ -3,7 +3,7 @@
     <h5>
       Spielzeug in Friedrichshain / Prenzlauer Berg
     </h5>
-    <ProductsComponent v-bind:products="Products"></ProductsComponent>
+    <ProductsComponent v-bind:products="products"></ProductsComponent>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
     components: {ProductsComponent}
   })
   export default class HomeComponent extends Vue {
-    private Products = Products;
+    private products = Products;
   }
   
 </script>

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import ProductsComponent from '@/components/ProductsComponent.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +19,12 @@ const routes = [
   },
   { path: '/shops/:id',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShopView.vue'),
+  },
+  { path: '/dashboard',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),
+  },
+  { path: '/dashboard/:id',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),
   }
 ];
 

@@ -46,7 +46,7 @@
       this.createMarkers();
     }
     
-    createMarkers() {
+    createMarkers(): void {
       this.shops.map((shop: Shop) => {
         this.markers.push({
           shop,

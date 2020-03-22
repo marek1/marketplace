@@ -10,12 +10,12 @@
       </a>
     </div>
     <div v-if="showMap">
-      <MapComponent v-bind:shops="Shops"></MapComponent>
+      <MapComponent v-bind:shops="shops"></MapComponent>
     </div>
     <div class="masonry">
       <div class="brick clickable"
            v-on:click="goToUrl(item.route)"
-           v-for="item in Shops"
+           v-for="item in shops"
            v-bind:key="item.name">
         <div>
           {{item.name}}
@@ -39,7 +39,7 @@
     components: {MapComponent}
   })
   export default class ShopsComponent extends Vue {
-    private Shops: Shop[] = Shops;
+    private shops: Shop[] = Shops;
     private showMap = false;
     goToUrl(url: string) {
       this.$router.push({ path: `/shops/${url}` })

@@ -20,7 +20,7 @@ export interface ProductFull extends Product {
   visits: Visit[];
 }
 
-interface Visit {
+export interface Visit {
   ip: string;
   date: Date;
 }
