@@ -1,7 +1,22 @@
 <template>
   <div>
+    <div>
+      <h5>
+        Besuche auf meiner Shopseite
+      </h5>
+    </div>
     <div v-if="loaded">
       <LineChart v-bind:chart-data="chartData"></LineChart>
+    </div>
+    <div>
+      <h5>
+        Letzte Suchen auf imkiez.de
+      </h5>
+      <ul class="collection">
+        <li class="collection-item" v-for="search in latestSearches" v-bind:key="search">
+          {{search}}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -19,11 +34,16 @@
   })
   export default class StatisticComponent extends Vue {
     @Prop() shop: Shop;
+    private latestSearches = [];
     private loaded = false;
     private chartData: ChartData = {
       labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
       datasets: []
     };
+
+    created(): void {
+      this.latestSearches = this.$store.getters.latestSearchTerms
+    }
 
     mounted(): void {
       this.shop.visits = this.shop.visits.concat(shopVisits);

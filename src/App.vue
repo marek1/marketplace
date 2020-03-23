@@ -10,7 +10,11 @@
       <router-link to="/shops">Läden</router-link>
     </div>
     <router-view/>
+    <div class="footer">
+      &copy; 2020 Marek Sonnabend - Dies ist ein Prototype.
+    </div>
   </div>
+  
 </template>
 
 <style>
@@ -133,5 +137,14 @@
   .badge.green {
     background-color: #42b983;
     opacity: 0.5;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    background: #d0d0d0;
+    width: 100%;
   }
 </style>
