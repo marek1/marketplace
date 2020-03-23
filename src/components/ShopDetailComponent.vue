@@ -54,7 +54,6 @@
     mounted(): void {
       this.products = this.shop.products;
       this.$store.subscribe((mutation, state) => {
-        console.log('???', mutation, state);
         if (mutation.type === 'searched') {
           this.products = this.shop.products.filter((product: Product) =>
             product.name.toString().toLowerCase().indexOf(mutation.payload.toString().toLowerCase()) > -1);

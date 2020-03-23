@@ -21,4 +21,3 @@ Vue.component('l-marker', LMarker);
 Vue.component('l-popup', LPopup);
 // Vue.component('line-chart', Line);
 
-
