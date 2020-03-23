@@ -27,8 +27,8 @@
       <h5>
         Produkte
       </h5>
-      <div>
-        <ProductsComponent v-bind:products="shop.products"></ProductsComponent>
+      <div v-if="products">
+        <ProductsComponent v-bind:products="products"></ProductsComponent>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import { Shop } from '@/interfaces';
+  import { Product, ProductFull, Shop } from '@/interfaces';
   import MapComponent from '@/components/MapComponent.vue';
   import ProductsComponent from '@/components/ProductsComponent.vue';
 
@@ -48,8 +48,19 @@
   })
   export default class ShopComponent extends Vue {
     @Prop() shop: Shop;
+    private products: Product|ProductFull[] = [];
     private showMap = false;
-    
+
+    mounted(): void {
+      this.products = this.shop.products;
+      this.$store.subscribe((mutation, state) => {
+        console.log('???', mutation, state);
+        if (mutation.type === 'searched') {
+          this.products = this.shop.products.filter((product: Product) =>
+            product.name.toString().toLowerCase().indexOf(mutation.payload.toString().toLowerCase()) > -1);
+        }
+      });
+    }
   }
 
 </script>
