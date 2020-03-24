@@ -1,5 +1,14 @@
 <template>
   <div id="app">
+    <div class="ribbon_holder" >
+      <div class="ribbon_wraps" >
+        <div class="ribbon_wrapLt"></div>
+        <div class="ribbon_wrapRt"></div>
+        <div class="ribbon_banner">
+          Prototype
+        </div>
+      </div>
+    </div>
     <div id="top-bar">
       &checkmark; Nachhaltig konsumieren
       &checkmark; Geschäfte in deiner Nähe unterstützen
@@ -147,4 +156,63 @@
     background: #d0d0d0;
     width: 100%;
   }
+
+  .ribbon_wrapLt,
+  .ribbon_wrapRt,
+  .ribbon_banner,
+  .ribbon_wraps	{ position:absolute; }
+
+  .ribbon_banner	{
+    -webkit-box-shadow:0px 3px 5px rgba(0,0,0,.5);
+    -moz-box-shadow:0px 3px 5px rgba(0,0,0,.5);
+    box-shadow:0px 3px 5px rgba(0,0,0,.5);
+  }
+  .ribbon_wraps	{
+    -webkit-transform-origin:100% 50%;
+    -moz-transform-origin:100% 50%;
+    -ms-transform-origin:100% 50%;
+    -o-transform-origin:100% 50%;
+    transform-origin:100% 50%;
+  }
+  .ribbon_wrapLt,
+  .ribbon_wrapRt	{
+    -webkit-transform-origin:50% 100%;
+    -moz-transform-origin:50% 100%;
+    -ms-transform-origin:50% 100%;
+    -o-transform-origin:50% 100%;
+    transform-origin:50% 100%;
+  }
+
+  .ribbon_wraps	{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+  }
+  .ribbon_wrapLt	{
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -ms-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
+  }
+  .ribbon_wrapRt	{
+    -webkit-transform:rotate(225deg);
+    -moz-transform:rotate(225deg);
+    -ms-transform:rotate(225deg);
+    -o-transform:rotate(225deg);
+    transform:rotate(225deg);
+  }
+  .ribbon_holder { /*as overlay*/ position:absolute; left:-6px; top:-6px;
+    width:150px; height:150px; overflow:hidden; background:transparent; }
+  .ribbon_holder { /*with image*/ position: absolute; left: -6px; top: -6px;
+    width:300px; height:375px; overflow:hidden; z-index:9999}
+  .ribbon_wraps  { width:204px; height:48px; left:-60px; top:-24px; overflow:hidden; }
+  .ribbon_wrapLt { width:30px; height: 6px;  left:-15px; bottom:50%; background:#622; }
+  .ribbon_wrapRt { width:30px; height: 6px; right:-15px; bottom:50%; background:#622; }
+  .ribbon_banner { width:204px; height:24px; right:0px; top:0px; line-height:24px;
+    text-align:center; font-weight:bold; font-family:arial;
+    font-size:16px; color:#fff; background:#c00; }
+  
 </style>
