@@ -1,4 +1,8 @@
-# vue-ts
+# marketplace
+
+An app made with Vue and written in Typescript.
+
+DEMO: https://marek-sonnabend.de/imkiez/ 
 
 ## Project setup
 ```

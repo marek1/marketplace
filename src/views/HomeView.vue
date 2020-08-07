@@ -13,4 +13,6 @@
       HomeComponent,
     },
   };
+  // console.log(process.env)
+
 </script>
